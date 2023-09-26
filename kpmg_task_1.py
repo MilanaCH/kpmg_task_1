@@ -400,6 +400,34 @@ df_merge.isnull().sum()
 df_merge.sample(3)
 
 
+# In[132]:
+
+
+#Lets check the accuracy of age
+df_merge['DOB'].describe()
+
+
+# In[133]:
+
+
+df_merge['DOB'].unique()
+
+
+# In[139]:
+
+
+from datetime import datetime,date
+df_merge['year'] = pd.DatetimeIndex(df_merge['DOB']).year
+df_merge['year']
+
+
+# In[141]:
+
+
+df_merge[df_merge['year']<1923]
+#8 entries have age greater than 100
+
+
 # In[ ]:
 
 
